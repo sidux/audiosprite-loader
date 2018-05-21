@@ -9,13 +9,7 @@ module.exports = function (content: Buffer, map: any, meta: any) {
         callback(null, `const Howl = require("howler").Howl;
 window.$_audiosprite = window.$_audiosprite || new Howl(${ data });
 
-module.exports = {
-  play: function () {
-    return window.$_audiosprite.play("${ soundId }");
-  }
-}`);
+module.exports = window.$_audiosprite`);
     });
 
 }
-
-module.exports.raw = true;
